@@ -1,0 +1,8 @@
+Subsystem,Component,Part Number / Spec,Interface,GPIO Pin (ESP32-S3),Qty,Estimated Cost (INR)
+Edge Microcontroller,ESP32-S3 Development Board,ESP32-S3-DevKitC-1 (N16R8),USB / Dual-Core 240MHz,N/A,1,750
+Vibration Sensor,Tri-Axial Accelerometer,MPU-6050 / ADXL345,I2C (400 kHz),GPIO 8 (SDA) / GPIO 9 (SCL),1,180
+Current Sensor,Hall-Effect Current Transducer,ACS712 (20A Module),Analog (12-bit ADC),GPIO 1 (ADC1_CH0),1,140
+Thermal Sensor,Waterproof Digital Temp Probe,DS18B20 + 4.7k Pull-up,OneWire,GPIO 4,1,120
+Galvanic Isolation,Optocoupler Module,PC817 1-Channel Isolation,Digital Out,GPIO 15,1,60
+Safety Actuator,Solid-State Relay (SSR),SSR-25DA (3-32V DC Control),Optocoupler Output,Relay Load Line,1,280
+Power Supply,Isolated Buck Converter,5V 2A Regulated DC Module,5V / GND Rails,5V / GND,1,150
