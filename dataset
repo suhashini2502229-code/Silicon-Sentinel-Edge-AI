@@ -1,0 +1,22 @@
+# Multi-Sensor Telemetry Dataset Specification
+
+## Overview
+This directory stores labeled time-series sensor logs collected from the ESP32-S3 condition monitoring testbed operating at a deterministic 1 kHz sampling rate.
+
+## Telemetry Schema (CSV Columns)
+Each log file follows a standardized 7-column schema:
+
+| Column | Unit | Description |
+| :--- | :---: | :--- |
+| `timestamp_ms` | ms | Monotonic hardware timer timestamp from ESP32-S3 |
+| `ax` | m/s^2 | X-axis linear acceleration (MPU-6050) |
+| `ay` | m/s^2 | Y-axis linear acceleration (MPU-6050) |
+| `az` | m/s^2 | Z-axis gravity-compensated linear acceleration (MPU-6050) |
+| `current_a` | A | RMS/instantaneous motor load current (ACS712) |
+| `temp_c` | °C | Motor housing surface temperature (DS18B20) |
+| `label` | int | Ground-truth class (`0`: Normal, `1`: Warning, `2`: Critical Fault) |
+
+## Fault Class Definitions
+* **Class 0 (`Normal`):** Baseline steady-state pump/motor operation within nominal thermal and vibration tolerances.
+* **Class 1 (`Warning`):** Early mechanical degradation, rotor imbalance, or bearing wear characterized by elevated vibration harmonics and crest factor.
+* **Class 2 (`Critical Fault`):** Severe cavitation, mechanical stall, or thermal runaway requiring immediate solid-state relay (SSR) power cutoff.
